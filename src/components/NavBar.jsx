@@ -38,7 +38,7 @@ export default function NavBar({isAuth, isAdmin}) {
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="bg-gradient-to-t from-green-600 to-black h-full border-0"
+      className="bg-gradient-to-t from-[#32ADC1] to-[#050F20] h-full border-0"
     >
       <NavbarContent className="pr-3" justify="end">
         <NavbarBrand>

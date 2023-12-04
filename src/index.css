@@ -5,3 +5,11 @@
 header {
     max-width: 100% !important;
 }
+
+.banner-web {
+    background-image: url(../public/banner.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
