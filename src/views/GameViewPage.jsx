@@ -104,7 +104,7 @@ export default function GameView() {
                 </div>
                 <div className="text-center mb-10 mt-12">
                     <TitleH2>Votos</TitleH2>
-                    <div className="md:grid md:grid-cols-3 mt-8">
+                    <div className="md:grid md:grid-cols-3 mt-8 justify-center">
                         {
                             votes.length != 0 &&
                             votes.map((vote) =>
@@ -133,7 +133,7 @@ export default function GameView() {
                         }
                         {
                             votes.length == 0 &&
-                                <p className="m-3 text-xl text-[#ABDAE5]">No hay votaciones disponibles.</p>
+                                <p className="m-3 text-xl text-center col-span-3 text-[#ABDAE5]">No hay votaciones disponibles.</p>
                         }
                     </div>   
                 </div>

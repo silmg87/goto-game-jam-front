@@ -135,33 +135,25 @@ export default function EditGame() {
                             
                             <Input className="mb-6" variant="flat" size="sm" type="text" label="Género" name="genre" id="genre" onChange={handleGenreChange} value={genre} />
 
-                            {/* <Select
-                                label="Año de edición del juego"
-                                className="w-full mb-6 disabled:bg-gray-200"
-                                size="sm"
-                                name="edicion" 
-                                id="edicion" 
-                                onChange={handleEditionChange} 
-                                value={edition}
+                            <Select
+                            label="Edición del juego"
+                            placeholder="Año de edición del juego"
+                            className="w-full mb-6"
+                            size="sm"
+                            name="edicion" 
+                            id="edicion" 
+                            onChange={handleEditionChange} 
+                            value={edition}
+                            selectedKeys={[edition]}
                             >
-                                <SelectItem value="2023">2023</SelectItem>
-                                <SelectItem value="2024">2024</SelectItem>
-                                <SelectItem value="2025">2025</SelectItem>
-                                <SelectItem value="2026">2026</SelectItem>
-                                <SelectItem value="2027">2027</SelectItem>
-                                <SelectItem value="2028">2028</SelectItem>
-                            </Select> */}
-                            <div className="mb-5">
-                                <label htmlFor="edicion">Edición</label>
-                                <select className="w-full  rounded p-2 bg-white disabled:bg-gray-200" name="edicion" id="edicion" onChange={handleEditionChange} value={edition}>
-                                    <option value="2023">2023</option>
-                                    <option value="2024">2024</option>
-                                    <option value="2025">2025</option>
-                                    <option value="2026">2026</option>
-                                    <option value="2027">2027</option>
-                                    <option value="2028">2028</option>
-                                </select>
-                            </div>
+                                <SelectItem key="2023" value="2023">2023</SelectItem>
+                                <SelectItem key="2024" value="2024">2024</SelectItem>
+                                <SelectItem key="2025" value="2025">2025</SelectItem>
+                                <SelectItem key="2026" value="2026">2026</SelectItem>
+                                <SelectItem key="2027" value="2027">2027</SelectItem>
+                                <SelectItem key="2028" value="2028">2028</SelectItem>
+                            </Select>
+
                             <div className="flex items-start gap-2">
                                 <Textarea
                                     label="Miembros"

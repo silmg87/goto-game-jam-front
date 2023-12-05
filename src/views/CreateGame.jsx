@@ -24,6 +24,7 @@ export default function CreateGame() {
         setName(e.target.value);
     }
     const handleEditionChange = (e) => {
+        console.log(e.target.value)
         setEdition(e.target.value);
     }
     const handleGenreChange = (e) => {
@@ -130,12 +131,12 @@ export default function CreateGame() {
                             onChange={handleEditionChange} 
                             value={edition}
                             >
-                                <SelectItem value="2023">2023</SelectItem>
-                                <SelectItem value="2024">2024</SelectItem>
-                                <SelectItem value="2025">2025</SelectItem>
-                                <SelectItem value="2026">2026</SelectItem>
-                                <SelectItem value="2027">2027</SelectItem>
-                                <SelectItem value="2028">2028</SelectItem>
+                                <SelectItem key="2023" value="2023">2023</SelectItem>
+                                <SelectItem key="2024" value="2024">2024</SelectItem>
+                                <SelectItem key="2025" value="2025">2025</SelectItem>
+                                <SelectItem key="2026" value="2026">2026</SelectItem>
+                                <SelectItem key="2027" value="2027">2027</SelectItem>
+                                <SelectItem key="2028" value="2028">2028</SelectItem>
                             </Select>
 
                             <div className="flex items-start gap-2">

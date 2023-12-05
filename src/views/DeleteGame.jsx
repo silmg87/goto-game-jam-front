@@ -49,7 +49,7 @@ export default function DeleteGame() {
 
     return(
         <>
-            <div className="flex items-center justify-center flex-col relative h-screen">
+            <div className="flex items-center justify-center flex-col relative">
                 <div className="text-center my-10 mx-5">
                     <TitleH1>Eliminar de juego</TitleH1>
                     <Card className="max-w-[350px] bg-[#ABDAE5]/5 mt-8 mx-auto">

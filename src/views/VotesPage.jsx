@@ -26,7 +26,7 @@ export default function Votes() {
 
     return(
         <>
-            <div className="flex items-center justify-center flex-col relative h-screen">
+            <div className="flex items-center justify-center flex-col relative">
                 <div className="text-center my-10 mx-5">
                     <TitleH1>Administrar Votos</TitleH1>
                     {

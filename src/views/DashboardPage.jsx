@@ -12,7 +12,7 @@ export default function Dashboard() {
 
     return (
         <>
-        <div className="flex items-center justify-center flex-col relative h-screen">
+        <div className="flex items-center justify-center flex-col relative">
             <div className="text-center mt-10 mb-10">
                 <TitleH1>Dashboard</TitleH1>
                 <section className="my-10 flex gap-5 flex-col justify-center items-center text-center sm:flex-row sm:text-left">

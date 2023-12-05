@@ -13,7 +13,7 @@ export default function Panel() {
 
     return (
         <>
-        <div className="flex items-center justify-center flex-col relative h-screen">
+        <div className="flex items-center justify-center flex-col relative">
         <div className="text-center my-10">
             <TitleH1>Mi Perfil</TitleH1>
             {

@@ -4,7 +4,7 @@ import TitleH1 from "../components/TitleH1";
 export default function NotFound() {
     return (
         <>
-        <div className="flex items-center justify-center flex-col relative">
+        <div className="flex items-center justify-center flex-col relative row-span-3">
             <div className="text-center my-10 mx-5">
                 <TitleH1>Página no encontrada</TitleH1>
                     <div className="my-10">

@@ -20,7 +20,7 @@ export default function Header() {
 
     return (
         <>
-            <div className="w-full bg-black text-white h-[60px]">
+            <div className="w-full bg-black text-white">
                 <NavBar isAuth={auth} isAdmin={admin}></NavBar>
             </div>
         </>

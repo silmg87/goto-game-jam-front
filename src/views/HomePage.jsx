@@ -5,14 +5,14 @@ import { IconSourceCode, IconDeviceGamepad2, IconAffiliate, IconAward } from '@t
 export default function Home() {
 
     return (
-        <>
-            <section className="flex justify-center flex-col items-center content-center text-center banner-web">
-                <h1 className="tracking-tight inline font-semibold from-[#ABDAE5] to-[#32ADC1] text-4xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-b">¡UNITE AL DESAFIO!</h1>
-                <p className="my-2 italic text-[#ABDAE5] font-bold text-xl">¿Estás listo para la batalla?</p>
-                <p className="italic text-[#ABDAE5] font-bold text-lg">¡La cuenta regresiva ha comenzado!</p>
-            </section>
-            <section className="container mx-auto px-2 my-20 text-center lg:w-[1200px]">
-                <section className="my-20 text-center">
+        <> 
+            <section className="mb-20 text-center">
+                <section className="flex justify-center flex-col px-2 items-center content-center text-center banner-web w-[100vw]">
+                    <h1 className="tracking-tight inline font-semibold from-[#ABDAE5] to-[#32ADC1] text-4xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-b">¡UNITE AL DESAFIO!</h1>
+                    <p className="my-2 italic text-[#ABDAE5] font-bold text-xl">¿Estás listo para la batalla?</p>
+                    <p className="italic text-[#ABDAE5] font-bold text-lg">¡La cuenta regresiva ha comenzado!</p>
+                </section>
+                <section className="my-20 px-2 text-center">
                     <TitleH2>Bienvenido a GOTO Game JAM</TitleH2>
                     <div className="flex flex-col justify-center items-center md:flex-row mt-8">
                         <p className="md:w-1/2 text-[#ABDAE5] px-2 my-5 text-left">¡Bienvenidos desarrolladores y entusiastas del mundo de los videojuegos a GOTO Game JAM, donde la creatividad y la velocidad se encuentran en una fusión única de 48 horas! Nos emociona presentar la plataforma que será testigo de la magia de la creación de juegos en tiempo real.</p>
@@ -25,7 +25,7 @@ export default function Home() {
                         />
                     </div>
                 </section>
-                <section className="my-20 text-center">
+                <section className="my-20 px-2 text-center">
                     <TitleH2>¿Qué es GOTO Game JAM?</TitleH2>
                     <div className="flex flex-col justify-center items-center md:flex-row mt-8 gap-3">
                     <Image
@@ -38,7 +38,7 @@ export default function Home() {
                     <p className="md:w-1/2 text-[#ABDAE5] px-2 my-5 text-left">GOTO Game JAM es más que una competencia; es un desafío apasionante donde equipos de desarrolladores se sumergen en el emocionante universo de la creación de videojuegos en un tiempo récord. Durante 48 horas, los participantes darán vida a sus ideas, superarán obstáculos y competirán por el reconocimiento en diversas categorías.</p>
                     </div>
                 </section>
-                <section className="my-20 text-center">
+                <section className="my-20 px-2 text-center">
                     <TitleH2>¿Qué Puedes Esperar?</TitleH2>
                     <div className="md:grid md:grid-cols-2 md:gap-8 mt-8 max-w-[800px] mx-auto">
                         <Card className="text-[#ABDAE5] my-5 bg-[#ABDAE5]/5 w-[250px] mx-auto rounded-lg p-3">
