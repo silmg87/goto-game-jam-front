@@ -13,3 +13,21 @@ header {
     background-size: cover;
     height: 100vh;
 }
+
+.bg-default-100 {
+    background-color: #cbd5e1;
+}
+
+.logo {
+    
+    background-image: url(../public/logo.svg);
+    background-repeat: no-repeat;
+    background-size: 60px;
+    display: block;
+    width: 60px;
+    height: 55px;
+    text-indent: 60px;
+    overflow: hidden;
+}
+
+

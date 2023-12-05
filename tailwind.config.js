@@ -9,11 +9,11 @@ import { nextui } from '@nextui-org/react'
         "./index.html",
     ],
     theme: {
-        // extend: {
-        //     gridTemplateRows: {
-        //         layout: '70px 1fr 60px',
-        //       },
-        // },
+        extend: {
+            gridTemplateRows: {
+                layout: '70px 1fr 60px',
+              },
+        },
         
     },
     plugins: [nextui()],

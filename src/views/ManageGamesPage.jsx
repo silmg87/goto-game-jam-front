@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react"
 import { UserContext } from "../contexts/userDatacontext";
+import {Card, CardHeader, CardBody, CardFooter, Divider, Image, Button} from "@nextui-org/react";
+import TitleH1 from "../components/TitleH1";
 
 export default function ManageGames() {
 
@@ -32,58 +34,71 @@ export default function ManageGames() {
 
     return (
             <>
-            <div className="flex items-center justify-center flex-col">
-                <h1 className="text-slate-600 font-bold text-4xl pt-14 text-center">Administrar Juegos</h1>
-                    <div className="max-w-4xl w-full p-6 mx-3 my-14 lg:grid lg:grid-cols-2 lg:gap-8">
+            <div className="flex items-center justify-center flex-col relative">
+                <div className="text-center mt-10 mb-10">
+                <TitleH1>Administrar Juegos</TitleH1>
+                
+                    <div className="max-w-4xl w-full p-6 mx-3 my-5 md:grid md:grid-cols-2 md:gap-8 ">
                     {
                        games.map((game) => 
-                       <article key={game._id} className="flex flex-col gap-5 s:flex-row s:flex-wrap shadow-lg mx-auto max-w-[470px] border-l-8 border border-green-700 rounded p-5 mb-8 lg:mb-0" >
-                        <div className="s:grid s:grid-cols-3 flex flex-col gap-5 justify-items-end">
-                            <div className="col-span-1 flex flex-col justify-between gap-5">
-                                <p className="text-xl text-green-700 font-bold">
-                                    ID : {game._id}
-                                </p>
-                                <h2 className="text-2xl font-semibold text-gray-800">
-                                    {game.name}
-                                </h2>
-                                <div className="col-span-2">
-                                    <ul className="font-normal text-gray-700 antialiased">
-                                        <li>
-                                            <span className="mr-2 inline-block font-semibold text-lg text-slate-600">Genero: </span>{game.genre}
-                                        </li>
-                                        <li>
-                                            <span className="mr-2 inline-block font-semibold text-lg text-slate-600">Edición: </span>{game.edition}
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="gap-5 flex w-full">
-                            {
-                                contextUserData.rol == 'admin' &&
-                                <>
-                                    <div className="w-full">
-                                        <Link to={`/dashboard/edit-game/${game._id}`}className="uppercase w-full block rounded py-1.5 px-3 text-center align-middle text-white font-semibold bg-cyan-500  hover:bg-cyan-400 active:bg-cyan-600 transition disabled:bg-slate-200">Editar</Link>
-                                    </div>
-                                    <div className="w-full">
-                                        <Link to={`/dashboard/delete-game/${game._id}`} className="uppercase w-full block rounded py-1.5 px-3 text-center align-middle text-white font-semibold bg-red-500  hover:bg-red-400 active:bg-red-600 transition disabled:bg-slate-200">Eliminar</Link>  
-                                    </div>
-                                </>
-                            }
-                            {
-                                contextUserData.rol == 'judge' &&
-                                <>
-                                    <div className="w-full">
-                                        <Link to={`/panel/add-vote/${game._id}`}className="uppercase w-full block rounded py-1.5 px-3 text-center align-middle text-white font-semibold bg-cyan-500  hover:bg-cyan-400 active:bg-cyan-600 transition disabled:bg-slate-200">Votar</Link>
-                                    </div>
-                                </>
-                            }
-                        </div>
-                       </article>
-                       )
+                       <Card key={game._id} className="max-w-[350px] bg-[#ABDAE5]/5 mb-8 px-5 pt-3">
+                       <CardHeader className="flex gap-3">
+                           <Image
+                           alt="nextui logo"
+                           height={40}
+                           radius="sm"
+                           src="../../public/img-default.jpg"
+                           width={40}
+                           />
+                           <div>
+                           <p className="text-[12px] font-medium text-[#ABDAE5]">ID : {game._id}</p>
+                           </div>
+                       </CardHeader>
+                       <Divider/>
+                       <CardBody>
+                           <h2 className="text-2xl mb-2 font-semibold text-[#32ADC1]">
+                               {game.name}
+                           </h2>
+                           <div className="col-span-2">
+                               <ul className="font-normal text-gray-700 antialiased">
+                                   <li className="text-[#ABDAE5]">
+                                       <span className="mr-2 inline-block font-semibold text-sm text-[#ABDAE5]">Genero: </span>{game.genre}
+                                   </li>
+                                   <li className="text-[#ABDAE5]">
+                                       <span className="mr-2 inline-block font-semibold text-sm text-[#ABDAE5]">Edición: </span>{game.edition}
+                                   </li>
+                               </ul>
+                           </div>
+                       </CardBody>
+                       <Divider/>
+                       <CardFooter>
+                       <div className="gap-5 flex w-full">
+                               {
+                                   contextUserData.rol == 'admin' &&
+                                   <>
+                                       <Button className="w-full text-md mb-4 font-medium text-white bg-[#32ADC1]" radius="sm" size="sm">
+                                           <Link to={`/dashboard/edit-game/${game._id}`}>Editar</Link>
+                                       </Button>
+                                       <Button className="w-full text-md mb-4 font-medium text-white bg-red-500" radius="sm" size="sm">
+                                           <Link to={`/dashboard/delete-game/${game._id}`}>Eliminar</Link>  
+                                       </Button>
+                                   </>
+                               }
+                               {
+                                   contextUserData.rol == 'judge' &&
+                                   <>
+                                       <div className="w-full">
+                                           <Link to={`/panel/add-vote/${game._id}`}className="uppercase w-full block rounded py-1.5 px-3 text-center align-middle text-white font-semibold bg-cyan-500  hover:bg-cyan-400 active:bg-cyan-600 transition disabled:bg-slate-200">Votar</Link>
+                                       </div>
+                                   </>
+                               }
+                           </div>
+                       </CardFooter>
+                   </Card>)
                     }
                     </div>
                 </div>
+            </div>
         </>
     )
 }

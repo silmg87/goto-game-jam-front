@@ -1,6 +1,8 @@
-import { useState, useEffect, useContext } from "react"
-import { UserContext } from "../contexts/userDataContext"
-import { Link } from "react-router-dom"
+import { useState, useEffect, useContext } from "react";
+import { UserContext } from "../contexts/userDataContext.jsx";
+import { Link } from "react-router-dom";
+import TitleH1 from "../components/TitleH1";
+import {Card, CardHeader, CardBody, CardFooter, Divider, Image, Button} from "@nextui-org/react";
 
 export default function Votes() {
 
@@ -24,28 +26,43 @@ export default function Votes() {
 
     return(
         <>
-            <div className="flex flex-col justify-center items-center gap-10">
-            <h1>Administrar Votos</h1>
-                    <Link  to="/panel" className="text-blue-600 text-[18px] hover:opacity-75">
-                        Volver al Panel
-                    </Link>  
-                    <ul className="flex flex-col gap-5">
+            <div className="flex items-center justify-center flex-col relative h-screen">
+                <div className="text-center my-10 mx-5">
+                    <TitleH1>Administrar Votos</TitleH1>
                     {
                         judge_votes.length != 0 &&
-                        judge_votes.map((vote) => 
-                        <li key={vote.game_name} className="border-l-5 border rounded-md border-green-700 p-5">
-                            <h2>{vote.game_name}</h2>
-                            <p>Arte: {vote.art}</p>
-                            <p>Jugabilidad: {vote.gameplay}</p>
-                            <p>Sonido: {vote.sound}</p>
-                            <p>Afinidad Temática: {vote.thematic_affinity}</p>
-                        </li>)
+                        judge_votes.map((vote) =>
+                            <Card key={vote.game_name} className="max-w-[350px] bg-[#ABDAE5]/5 mt-8 mx-auto">
+                                <CardHeader className="flex gap-3">
+                                <Image
+                                    alt="nextui logo"
+                                    height={40}
+                                    radius="sm"
+                                    src="../../public/img-default.jpg"
+                                    width={40}
+                                    />
+                                    <div>
+                                    <p className="font-medium text-lg text-[#ABDAE5]">{vote.game_name}</p>
+                                    </div>
+                                </CardHeader>
+                                <CardBody>
+                                    <ul className="flex flex-col justify-center gap-5 text-center">
+                                        <li className="text-[#ABDAE5]">Arte: {vote.art}</li>
+                                        <li className="text-[#ABDAE5]">Jugabilidad: {vote.gameplay}</li>
+                                        <li className="text-[#ABDAE5]">Sonido: {vote.sound}</li>
+                                        <li className="text-[#ABDAE5]">Afinidad Temática: {vote.thematic_affinity}</li>
+                                    </ul>
+                                </CardBody>
+                            </Card>)
                     }
                     {
                         judge_votes.length == 0 &&
-                        <li>No hay votaciónes disponibles</li>
+                        <p className="text-[#ABDAE5] mt-10">No hay votaciónes disponibles</p>
                     }
-                    </ul>                  
+                </div>
+                <Link  to="/panel" className="text-center font-medium text-[#32ADC1] text-[18px] hover:opacity-75">
+                    Volver al Panel
+                </Link>              
             </div>
         </>
     )

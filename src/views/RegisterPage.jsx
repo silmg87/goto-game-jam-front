@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom";
+import { Input, Button, Image } from "@nextui-org/react";
 
 export default function Register() {
 
@@ -52,27 +53,34 @@ export default function Register() {
 
     return(
         <>
-            <section className="container mx-auto">
-                <h1 className="text-center">Registrarse GotoGameJam</h1>
-                <form id="form" onSubmit={handleFormSubmit} className="flex flex-col max-w-2xl mx-auto" encType="application/x-www-form-urlencoded">
-                    <label htmlFor="name">Nombre</label>
-                    <input type="text" name="name" id="name" onChange={handleNameChange} value={name}/>
+            <section className="flex justify-center items-center h-screen">
+                <div className="bg-[#ABDAE5]/5 mx-2 px-6 py-3 rounded-lg text-center flex flex-col justify-center items-center max-w-[400px]">
+                    <Image
+                            isBlurred
+                            className="mx-auto"
+                            width={80}
+                            alt=""
+                            src="../../public/logo.svg"
+                        />
+                    <h1 className="text-[#32ADC1] text-2xl font-semibold">Registro</h1>
+                    <form id="form" onSubmit={handleFormSubmit} className="w-full mt-5" encType="application/x-www-form-urlencoded">
+                     
+                        <Input className="mb-6" variant="flat" size="sm" type="text" label="Nombre" name="name" id="name" onChange={handleNameChange} value={name}/>
 
-                    <label htmlFor="surname">Apellido</label>
-                    <input type="text" name="surname" id="surname" onChange={handleSurnnameChange} value={surname}/>
+                        <Input className="mb-6" variant="flat" size="sm" type="text" label="Apellido" name="surname" id="surname" onChange={handleSurnnameChange} value={surname}/>
 
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name="email" id="email" onChange={handleEmailChange} value={email}/>
+                        <Input className="mb-6" variant="flat" size="sm" type="email" label="Email" name="email" id="email" onChange={handleEmailChange} value={email}/>
 
-                    <label htmlFor="password">Password</label>
-                    <input type="password" name="password" id="password" onChange={handlePasswordChange} value={password}/>
-
-                    <label htmlFor="confirm_password">Confirmar Password</label>
-                    <input type="password" name="confirm_password" id="confirm_password" onChange={handlePasswordConfirmChange} value={confirm_password}/>
-
-                    <button type="submit">Registrarse</button>
-                </form>
-                <Link className="block mx-auto text-center" to="/login">Volver</Link>
+                        <Input className="mb-6" variant="flat" size="sm" type="password" label="Password" name="password" id="password" onChange={handlePasswordChange} value={password}/>
+                        
+                        <Input variant="flat" size="sm" type="password" label="Confirmar Password" name="confirm_password" id="confirm_password" onChange={handlePasswordConfirmChange} value={confirm_password}/>
+                                            
+                        <Button className="text-md mt-8 mb-4 font-medium bg-[#32ADC1]" type="submit" radius="sm" size="sm">
+                            Registrarse
+                        </Button>
+                    </form>
+                    <Link className="text-small block mx-auto text-center font-medium text-[#32ADC1]" to="/login">Volver al Inicio de sesión de GoToGamesJam.</Link>
+                </div>
             </section>
         </>
     )

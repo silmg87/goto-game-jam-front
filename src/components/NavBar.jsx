@@ -42,7 +42,7 @@ export default function NavBar({isAuth, isAdmin}) {
     >
       <NavbarContent className="pr-3" justify="end">
         <NavbarBrand>
-          <Link to="/" className="font-bold text-inherit">GTGameJam</Link>
+          <Link to="/" className="font-bold text-inherit logo">GoToGameJam</Link>
         </NavbarBrand>
       </NavbarContent>
 

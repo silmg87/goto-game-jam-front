@@ -3,18 +3,18 @@ import Footer from './components/Footer';
 import PrivateRoute from './components/Privateroute';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
-import Home from './views/HomePage'
-import About from './views/AboutPage';
-import Games from './views/GamesPage';
-import GameView from './views/GameViewPage';
-import NotFound from './views/NotFoundPage';
+import Home from './views/HomePage.jsx'
+import About from './views/AboutPage.jsx';
+import Games from './views/GamesPage.jsx';
+import GameView from './views/GameViewPage.jsx';
+import NotFound from './views/NotFoundPage.jsx';
 
-import LoginPage from './views/LoginPage';
-import RegisterPage from './views/RegisterPage';
-import Dashboard from './views/DashboardPage';
-import Panel from './views/UserProfilePage';
+import LoginPage from './views/LoginPage.jsx';
+import RegisterPage from './views/RegisterPage.jsx';
+import Dashboard from './views/DashboardPage.jsx';
+import Panel from './views/UserProfilePage.jsx';
 
-import ManageGames from './views/ManageGamesPage';
+import ManageGames from './views/ManageGamesPage.jsx';
 import EditGame from './views/EditGame.jsx';
 import DeleteGame from './views/DeleteGame.jsx';
 import CreateGame from './views/CreateGame.jsx';

@@ -2,6 +2,8 @@ import { useState } from "react"
 import { useParams, Link, useNavigate } from "react-router-dom"
 import { useContext } from "react"
 import { UserContext } from "../contexts/userDatacontext";
+import TitleH1 from "../components/TitleH1";
+import { Input, Button } from "@nextui-org/react";
 
 export default function CreateVote() {
 
@@ -54,35 +56,73 @@ export default function CreateVote() {
     return (
         <>
             <div className="flex items-center justify-center flex-col relative">
-                <div className="max-w-3xl w-full px-6">
-                    <h1 className="text-slate-600 font-bold text-4xl pt-14 text-left">Editar Juego ID {idGame}</h1>
+                <div className="text-center my-10 w-[300px] md:w-[500px]">
+                    <TitleH1>Editar Juego <span className="flex flex-col mt-2 text-[#32ADC1] text-[20px]">ID: {idGame}</span></TitleH1>
                     <div className="my-10 pb-10">
-                        <form id="form" onSubmit={handleFormSubmit}>
-                            <div className="mb-5">
-                                <label htmlFor="name">Arte</label>
-                                <input type="text" id="name" onChange={handleArtChange} value={art} />
+                        <form id="form" onSubmit={handleFormSubmit} className="mx-3">                     
+                            
+                            <div className="mb-5 flex gap-2 items-center justify-between">
+                                <label htmlFor="name" className="text-[#32ADC1] font-semibold">Arte</label>
+                                <Input
+                                    type="number"
+                                    placeholder="Puntaje" 
+                                    id="art" 
+                                    onChange={handleArtChange} 
+                                    value={art} 
+                                    className="w-[90px]"
+                                    size="sm"
+                                />
                             </div>
-                            <div className="mb-5">
-                                <label htmlFor="name">Jugabilidad</label>
-                                <input type="text" id="name" onChange={handleGameplayChange} value={gameplay} />
-                            </div>
-                            <div className="mb-5">
-                                <label htmlFor="name">Sonido</label>
-                                <input type="text" id="name" onChange={handleSoundChange} value={sound} />
-                            </div>
-                            <div className="mb-5">
-                                <label htmlFor="name">Afinidad Temática</label>
-                                <input type="text" id="name" onChange={handleThematicAffinityChange} value={thematic_affinity} />
-                            </div>
-                            <div className="border-t-2 border-gray-300">
-                                <button type="sumbit" className="mt-8">Guardar Cambios</button>
-                            </div>                                                                                    
-                        </form>
-                        <div>
-                            <Link className="w-full block rounded p-1.5 mt-8 text-white font-semibold bg-red-500 hover:bg-red-400 active:bg-red-600 transition disabled:bg-slate-200 text-center" to="/panel/games">Cancelar</Link>
-                        </div>
-                    </div>
 
+                            <div className="mb-5 flex gap-2 items-center justify-between">
+                                <label htmlFor="name" className="text-[#32ADC1] font-semibold">Jugabilidad</label>
+                                <Input
+                                    type="number"
+                                    placeholder="Puntaje" 
+                                    id="gameplay" 
+                                    onChange={handleGameplayChange} 
+                                    value={gameplay} 
+                                    className="w-[90px]"
+                                    size="sm"
+                                />
+                            </div>
+
+                            <div className="mb-5 flex gap-2 items-center justify-between">
+                                <label htmlFor="name" className="text-[#32ADC1] font-semibold">Sonido</label>
+                                <Input
+                                    type="number"
+                                    placeholder="Puntaje" 
+                                    id="sound" 
+                                    onChange={handleSoundChange}
+                                    value={sound} 
+                                    className="w-[90px]"
+                                    size="sm"
+                                />
+                            </div>
+
+                            <div className="mb-5 flex gap-2 items-center justify-between">
+                                <label htmlFor="name" className="text-[#32ADC1] font-semibold">Afinidad Temática</label>
+                                <Input
+                                    type="number"
+                                    placeholder="Puntaje" 
+                                    id="thematic_affinity" 
+                                    onChange={handleThematicAffinityChange}
+                                    value={thematic_affinity} 
+                                    className="w-[90px]"
+                                    size="sm"
+                                />
+                            </div>
+                            <div className="border-t-2 border-[#ABDAE5]">
+                                <Button className="w-full text-md mt-8 mb-4 font-medium bg-[#32ADC1]" type="submit" radius="sm" size="sm">
+                                    Guardar voto
+                                </Button>
+                            </div>                                                                                      
+                        </form>
+                        
+                        <Button className="w-[276px] md:w-[480px] text-md my-4 mx-auto  font-medium text-white bg-red-500" radius="sm" size="sm">
+                            <Link to="/panel/games">Cancelar</Link>
+                        </Button>
+                    </div>
                 </div>
             </div>
         </>
