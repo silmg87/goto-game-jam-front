@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { UserContext } from "../contexts/userDatacontext";
-import { IconEdit, IconGhost, IconUserCircle } from '@tabler/icons-react';
+import { IconEdit, IconGhost } from '@tabler/icons-react';
 import { Link } from "react-router-dom";
 import TitleH1 from "../components/TitleH1";
 import TitleH2 from "../components/TitleH2";
@@ -37,20 +37,6 @@ export default function Panel() {
                     </section>
                     <section className="my-10 rounded-lg bg-[#ABDAE5]/5 p-6 shadow-lg flex flex-col justify-center">
                         <TitleH2>Proximamente...</TitleH2>
-                        {/* <ul>
-                            <li className="ml-4 mb-4 flex items-center gap-4">
-                                <IconSquareRoundedPlus size="30" strokeWidth="2" color="green"/>
-                                <Link to="/dashboard/add-game" className="text-blue-600 text-[18px] hover:opacity-75">
-                                    Nuevo Juego
-                                </Link>
-                            </li>
-                            <li className="ml-4 flex items-center gap-4">
-                                <IconAdjustmentsHorizontal size="30" strokeWidth="2" color="green"/>
-                                <Link  to="/dashboard/manage-games" className="text-blue-600 text-[18px] hover:opacity-75">
-                                    Ver Juegos
-                                </Link>
-                            </li>
-                        </ul> */}
                     </section>
                 </>
             }

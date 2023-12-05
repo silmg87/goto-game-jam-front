@@ -38,7 +38,8 @@ export default function CreateVote() {
         fetch(`http://www.localhost:8083/games/${idGame}/votes`, {
             method: "POST",
             headers: {
-                'content-type' : 'application/json'
+                'content-type' : 'application/json',
+                'auth-token' : localStorage.getItem('token')
             },
             body: JSON.stringify({ judge_id, art, gameplay, sound, thematic_affinity })
         })
@@ -59,7 +60,7 @@ export default function CreateVote() {
                 <div className="text-center my-10 w-[300px] md:w-[500px]">
                     <TitleH1>Editar Juego <span className="flex flex-col mt-2 text-[#32ADC1] text-[20px]">ID: {idGame}</span></TitleH1>
                     <div className="my-10 pb-10">
-                        <form id="form" onSubmit={handleFormSubmit} className="mx-3">                     
+                        <form id="form" onSubmit={handleFormSubmit} className="mx-3" noValidate>                     
                             
                             <div className="mb-5 flex gap-2 items-center justify-between">
                                 <label htmlFor="name" className="text-[#32ADC1] font-semibold">Arte</label>
@@ -70,7 +71,9 @@ export default function CreateVote() {
                                     onChange={handleArtChange} 
                                     value={art} 
                                     className="w-[90px]"
-                                    size="sm"
+                                    size="sm"                             
+                                    max={10}
+                                    min={1}
                                 />
                             </div>
 
@@ -84,6 +87,8 @@ export default function CreateVote() {
                                     value={gameplay} 
                                     className="w-[90px]"
                                     size="sm"
+                                                                        max={10}
+                                    min={1}
                                 />
                             </div>
 
@@ -97,6 +102,8 @@ export default function CreateVote() {
                                     value={sound} 
                                     className="w-[90px]"
                                     size="sm"
+                                                                        max={10}
+                                    min={1}
                                 />
                             </div>
 
@@ -110,16 +117,22 @@ export default function CreateVote() {
                                     value={thematic_affinity} 
                                     className="w-[90px]"
                                     size="sm"
+                                                                        max={10}
+                                    min={1}
                                 />
                             </div>
                             <div className="border-t-2 border-[#ABDAE5]">
-                                <Button className="w-full text-md mt-8 mb-4 font-medium bg-[#32ADC1]" type="submit" radius="sm" size="sm">
+                                <Button className="w-full text-md mt-8 mb-4 font-medium bg-[#32ADC1]" type="submit" radius="sm" size="sm"
+                                                                    max={10}
+                                    min={1}>
                                     Guardar voto
                                 </Button>
                             </div>                                                                                      
                         </form>
                         
-                        <Button className="w-[276px] md:w-[480px] text-md my-4 mx-auto  font-medium text-white bg-red-500" radius="sm" size="sm">
+                        <Button className="w-[276px] md:w-[480px] text-md my-4 mx-auto  font-medium text-white bg-red-500" radius="sm" size="sm"
+                                                            max={10}
+                                    min={1}>
                             <Link to="/panel/games">Cancelar</Link>
                         </Button>
                     </div>

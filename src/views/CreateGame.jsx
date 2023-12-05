@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { IconCirclePlus, IconSettingsFilled, IconTrashFilled } from "@tabler/icons-react";
 import TitleH1 from "../components/TitleH1";
-import { Input, Button, Select, SelectItem, Textarea } from "@nextui-org/react";
+import { Input, Button, Select, SelectItem } from "@nextui-org/react";
 
 export default function CreateGame() {
 
@@ -95,7 +95,8 @@ export default function CreateGame() {
         fetch(`http://www.localhost:8083/games`, {
             method: "POST",
             headers: {
-                'content-type' : 'application/json'
+                'content-type' : 'application/json',
+                'auth-token' : localStorage.getItem('token')
             },
             body: JSON.stringify({ name, genre, members, edition })
         })
@@ -140,7 +141,7 @@ export default function CreateGame() {
                             </Select>
 
                             <div className="flex items-start gap-2">
-                                <Textarea
+                                <Input
                                     label="Miembros"
                                     placeholder="Ingresar nombres de los desarrolladores"
                                     className="w-full mb-6"
@@ -148,14 +149,14 @@ export default function CreateGame() {
                                     value={member} 
                                     onChange={handleMemberChange}
                                 />
-                                <Button type="button" className="bg-[#32ADC1] p-2 rounded-md h-[100px] w-[50px]" onClick={addMember}>
+                                <Button type="button" className="bg-[#32ADC1] p-2 rounded-xl h-[56px]" onClick={addMember}>
                                     <IconCirclePlus size={26} strokeWidth={1} />
                                 </Button >
                             </div>
                             <ul className="my-8">
                                 {
                                     members.map((member, index) =>
-                                    <li key={index} className="text-[#ABDAE5] mb-5 grid grid-cols-6 gap-1 text-l justify-center items-center">
+                                    <li key={index} className="text-[#ABDAE5] mb-5 grid grid-cols-6 gap-1 text-l justify-center items-center ">
                                         <div className="col-start-1 col-end-5">{member.name}</div>
                                         <div className="flex justify-end">
                                             <button type="button" className="bg-blue-500 p-2 rounded-md hover:bg-blue-400 active:bg-blue-600" onClick={() => { editMember(member.id), openModal()} }>
@@ -195,7 +196,7 @@ export default function CreateGame() {
                         <form onSubmit={ (e) => { saveMemberEdit(e, member_id) }}>
                             <div className="mb-8">
                                 <label htmlFor="member_edit">Miembro</label>
-                                <Textarea id="member_edit" className="w-full rounded p-2 resize-none mb-0 sm:h-[100px]" value={member_edit} onChange={handleMemberEditChange}></Textarea>
+                                <Input id="member_edit" className="w-full rounded pt-4 mb-0" value={member_edit} onChange={handleMemberEditChange} />
                             </div>
                             <div className="flex justify-end w-full gap-2">
                                 <Button radius="sm" size="sm" type="button" className="bg-red-500 text-md px-7 py-2 rounded-md text-white font-medium w-full" onClick={closeModal}>Cancelar</Button>

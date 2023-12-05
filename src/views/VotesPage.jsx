@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { UserContext } from "../contexts/userDataContext.jsx";
 import { Link } from "react-router-dom";
 import TitleH1 from "../components/TitleH1";
-import {Card, CardHeader, CardBody, CardFooter, Divider, Image, Button} from "@nextui-org/react";
+import {Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 
 export default function Votes() {
 

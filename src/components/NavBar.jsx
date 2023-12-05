@@ -84,7 +84,7 @@ export default function NavBar({isAuth, isAdmin}) {
             )} 
       </NavbarContent>
 
-      <NavbarMenu>
+      <NavbarMenu className="p-8">
             <NavbarMenuItem>
                 <Link to="/" onClick={() => setIsMenuOpen(false)} className="font-medium w-full" size="lg">Home</Link>
             </NavbarMenuItem>

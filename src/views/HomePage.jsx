@@ -1,5 +1,5 @@
 import TitleH2 from "../components/TitleH2";
-import {Image, Card, CardHeader, CardBody} from "@nextui-org/react";
+import { Image, Card, CardHeader, CardBody } from "@nextui-org/react";
 import { IconSourceCode, IconDeviceGamepad2, IconAffiliate, IconAward } from '@tabler/icons-react';
 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <> 
             <section className="mb-20 text-center">
-                <section className="flex justify-center flex-col px-2 items-center content-center text-center banner-web w-[100vw]">
+                <section className="flex justify-center flex-col px-2 items-center content-center text-center banner-web">
                     <h1 className="tracking-tight inline font-semibold from-[#ABDAE5] to-[#32ADC1] text-4xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-b">¡UNITE AL DESAFIO!</h1>
                     <p className="my-2 italic text-[#ABDAE5] font-bold text-xl">¿Estás listo para la batalla?</p>
                     <p className="italic text-[#ABDAE5] font-bold text-lg">¡La cuenta regresiva ha comenzado!</p>

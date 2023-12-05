@@ -13,7 +13,9 @@ export default function DeleteGame() {
     const { idGame } = useParams()
 
     useEffect(() => {
-        fetch(`http://www.localhost:8083/games/${idGame}`)
+        fetch(`http://www.localhost:8083/games/${idGame}`,{
+            method: 'GET',
+         })
             .then(response => response.json())
                 .then(data => {
                     console.log(data)
@@ -27,6 +29,9 @@ export default function DeleteGame() {
 
         fetch(`http://www.localhost:8083/games/${idGame}`, {
             method: "DELETE",
+            headers: {
+                'auth-token' : localStorage.getItem('token')
+            },
         })
         .then( res => res.json())
         .then( res => {

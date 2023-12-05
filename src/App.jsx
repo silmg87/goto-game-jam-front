@@ -1,6 +1,6 @@
 import Header  from './components/Header'
 import Footer from './components/Footer';
-import PrivateRoute from './components/Privateroute';
+import PrivateRoute from './components/PrivateRoute';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 import Home from './views/HomePage.jsx'
@@ -114,7 +114,7 @@ export default function App() {
 
     return (
         <>
-          <RouterProvider router={router} />
+          <RouterProvider router={router}/>
         </>
     )
 }

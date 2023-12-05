@@ -2,29 +2,20 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import TitleH1 from "../components/TitleH1";
 import TitleH2 from "../components/TitleH2";
-import {Card, CardHeader, CardBody, Avatar, AvatarIcon, Button, Link} from "@nextui-org/react";
+import {Card, CardHeader, CardBody, Avatar, AvatarIcon } from "@nextui-org/react";
 
 export default function GameView() {
 
-    // const [game, setGame] = useState({})
     const [votes, setVotes] = useState([])
     const [members, setMembers] = useState([])
     const [average, setAverage] = useState([])
 
     const { idGame } = useParams()
 
-    // useEffect(() => {
-    //     fetch(`http://www.localhost:8083/games/${idGame}`)
-    //         .then(response => response.json())
-    //             .then(data => {
-    //                 console.log(data)
-    //                 setGame(data)
-    //                 setMembers(data.members)
-    //         })
-    // }, [idGame])
-
     useEffect(() => {
-        fetch(`http://www.localhost:8083/games/${idGame}/votes`)
+        fetch(`http://www.localhost:8083/games/${idGame}/votes`, {
+            method: 'GET'
+        })
             .then(response => response.json())
                 .then(data => {
                     console.log(data)
@@ -33,7 +24,9 @@ export default function GameView() {
     }, [idGame])
 
     useEffect(() => {
-        fetch(`http://www.localhost:8083/games/${idGame}/average`)
+        fetch(`http://www.localhost:8083/games/${idGame}/average`, {
+            method: 'GET'
+        })
             .then(response => response.json())
                 .then(data => {
                     console.log(data)
@@ -47,22 +40,6 @@ export default function GameView() {
             <section className="container mx-auto px-2 my-20 text-center">
                 <TitleH1>Detalle de juego</TitleH1>
 
-                {/* <h2>{game.name}</h2>
-                <div className="flex gap-5">
-                    <p>Género: {game.genre}</p>
-                    <p>Edición: {game.edition}</p>
-                    <p>Puntaje Total: {game.totalScore}</p>
-                </div>
-                <div className="flex items-center gap-5">
-                    <h3 className="self-start">Desarrolladores</h3>
-                    <ul>
-                    {
-                        members.map(member =>
-                            <li key={member.id}>{member.name}</li>
-                        )
-                    }
-                    </ul>
-                </div> */}
                  {
                         average.map((average) =>
                             <div key={average.name} className="text-center mt-10 mb-10">

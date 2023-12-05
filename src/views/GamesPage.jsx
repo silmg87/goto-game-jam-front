@@ -114,6 +114,10 @@ export default function Games(){
                                 </CardFooter>
                             </Card>)
                         }
+                        {
+                            games.length == 0 &&
+                            <p className="m-3 text-xl text-center col-span-3 text-[#ABDAE5]">No hay juegos disponibles con tu consulta</p>
+                        }
                     </div>
             </section>
         </>
